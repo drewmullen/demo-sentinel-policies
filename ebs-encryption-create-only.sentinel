@@ -1,0 +1,11 @@
+import "tfplan/v2" as tfplan
+
+violations = filter tfplan.resource_changes as _, rc {
+	rc.type is "aws_ebs_volume" and
+		rc.change.actions is ["create"] and
+		rc.change.after.encrypted is false
+}
+
+main = rule {
+	length(violations) == 0
+}
