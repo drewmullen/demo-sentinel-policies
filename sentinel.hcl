@@ -6,7 +6,7 @@
 # }
 
 policy "ebs-encryption-create-only" {
-  source = "./policies/ebs-encryption-create-only"
+  source = "./policies/ebs-encryption-create-only.sentinel"
   enforcement_level = "advisory"
 }
 
