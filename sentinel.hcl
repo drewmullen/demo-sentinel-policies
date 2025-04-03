@@ -7,7 +7,7 @@
 
 policy "ebs-encryption-create-only" {
   source = "./ebs-encryption-create-only.sentinel"
-  enforcement_level = "advisory"
+  enforcement_level = "hard-mandatory"
 }
 
 module "report" {
