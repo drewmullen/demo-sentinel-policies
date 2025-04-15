@@ -1,0 +1,70 @@
+id = "run-rte4Cdcbimk6dR4m"
+created_at = "2025-04-15T18:56:03.725Z"
+created_by = "drewmullendfa0ce38"
+message = "Triggered via UI"
+commit_sha = "82ffb4effe05910d468cf18e42364f490764b984"
+speculative = false
+is_destroy = false
+refresh = true
+refresh_only = false
+replace_addrs = []
+target_addrs = null
+project = {
+	"id":   "prj-WpJ42gXjAKzRyW8T",
+	"name": "demo-tfc-vcs-trunkbased",
+}
+
+variables = {
+	"TF_CLI_ARGS": {
+		"category":  "env",
+		"sensitive": false,
+	},
+	"VAULT_ADDR": {
+		"category":  "env",
+		"sensitive": false,
+	},
+	"VAULT_SKIP_VERIFY": {
+		"category":  "env",
+		"sensitive": false,
+	},
+	"VAULT_TOKEN": {
+		"category":  "env",
+		"sensitive": true,
+	},
+}
+
+organization = {
+	"name": "mullen-hashi",
+}
+
+workspace = {
+	"auto_apply":     true,
+	"created_at":     "2025-04-08T19:52:03.075Z",
+	"description":    "",
+	"execution_mode": "default",
+	"id":             "ws-S2cEtutJZxiRPG6k",
+	"name":           "dev",
+	"tag_bindings": [
+		{
+			"inherited": true,
+			"key":       "prodproject",
+			"value":     null,
+		},
+		{
+			"inherited": false,
+			"key":       "prod",
+			"value":     null,
+		},
+	],
+	"tags": [
+		"prodproject",
+		"prod",
+	],
+	"vcs_repo": {
+		"branch":             "main",
+		"display_identifier": "drewmullen/demo-tfc-vcs-trunkbased",
+		"identifier":         "drewmullen/demo-tfc-vcs-trunkbased",
+		"ingress_submodules": false,
+	},
+	"working_directory": "",
+}

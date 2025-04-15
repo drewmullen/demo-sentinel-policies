@@ -1,0 +1,42 @@
+import "tfrun"
+import "tfplan/v2" as tfplan
+
+param envs_enforced default [
+    "prod",
+]
+
+env_enforced = filter tfrun.workspace.tags as tag {
+    tag in envs_enforced
+}
+
+unencrypted_ebs = filter tfplan.resource_changes as _, rc {
+	rc.type is "aws_ebs_volume" and
+		rc.change.actions is ["create"] and
+		rc.change.after.encrypted is false 
+}
+
+not_in_enforced_env = rule {
+    length(env_enforced) == 0
+}
+
+all_ebs_encrypted = rule {
+    length(unencrypted_ebs) == 0
+}
+ 
+if all_ebs_encrypted {
+    print("All EBS volumes are encrypted")
+} else {
+    print("Some EBS volumes are not encrypted")
+}
+
+if not_in_enforced_env {
+    print("Not building in an enforceable environment")
+} else {
+    print("Building in an enforceable environment, enforcing policy")
+}
+
+// Rule: no unecnrypted ebs in prod
+main = rule {
+	all_ebs_encrypted or
+    not_in_enforced_env
+}

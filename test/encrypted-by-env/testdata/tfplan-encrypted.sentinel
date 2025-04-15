@@ -1,0 +1,361 @@
+terraform_version = "1.11.3"
+
+planned_values = {
+	"outputs": {},
+	"resources": {
+		"random_pet.name": {
+			"address":        "random_pet.name",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "name",
+			"provider_name":  "registry.terraform.io/hashicorp/random",
+			"tainted":        false,
+			"type":           "random_pet",
+			"values": {
+				"id":        "dev-assured-crawdad",
+				"keepers":   null,
+				"length":    2,
+				"prefix":    "dev",
+				"separator": "-",
+			},
+		},
+	},
+}
+
+variables = {
+	"name": {
+		"name":  "name",
+		"value": "dev",
+	},
+}
+
+resource_changes = {
+	"random_pet.name": {
+		"address": "random_pet.name",
+		"change": {
+			"actions": [
+				"no-op",
+			],
+			"after": {
+				"id":        "dev-assured-crawdad",
+				"keepers":   null,
+				"length":    2,
+				"prefix":    "dev",
+				"separator": "-",
+			},
+			"after_unknown": {},
+			"before": {
+				"id":        "dev-assured-crawdad",
+				"keepers":   null,
+				"length":    2,
+				"prefix":    "dev",
+				"separator": "-",
+			},
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "name",
+		"provider_name":  "registry.terraform.io/hashicorp/random",
+		"type":           "random_pet",
+	},
+	"vault_generic_secret.test": {
+		"address": "vault_generic_secret.test",
+		"change": {
+			"actions": [
+				"delete",
+			],
+			"after":         null,
+			"after_unknown": {},
+			"before": {
+				"data":                "REDACTED_SENSITIVE",
+				"data_json":           "REDACTED_SENSITIVE",
+				"delete_all_versions": false,
+				"disable_read":        false,
+				"id":                  "kvv2/test2",
+				"namespace":           null,
+				"path":                "kvv2/test2",
+			},
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "test",
+		"provider_name":  "registry.terraform.io/hashicorp/vault",
+		"type":           "vault_generic_secret",
+	},
+}
+
+resource_drift = {
+	"vault_generic_secret.test": {
+		"address": "vault_generic_secret.test",
+		"change": {
+			"actions": [
+				"update",
+			],
+			"after": {
+				"data": {
+					"data":     "null",
+					"metadata": "{\"created_time\":\"2025-04-08T20:37:10.183396339Z\",\"custom_metadata\":null,\"deletion_time\":\"2025-04-09T00:07:10.183396339Z\",\"destroyed\":false,\"version\":1}",
+				},
+				"data_json":           "{\"data\":null,\"metadata\":{\"created_time\":\"2025-04-08T20:37:10.183396339Z\",\"custom_metadata\":null,\"deletion_time\":\"2025-04-09T00:07:10.183396339Z\",\"destroyed\":false,\"version\":1}}",
+				"delete_all_versions": false,
+				"disable_read":        false,
+				"id":                  "kvv2/test2",
+				"namespace":           null,
+				"path":                "kvv2/test2",
+			},
+			"after_unknown": {},
+			"before": {
+				"data": {
+					"name": "dev-assured-crawdad",
+				},
+				"data_json":           "{\"name\":\"dev-assured-crawdad\"}",
+				"delete_all_versions": false,
+				"disable_read":        false,
+				"id":                  "kvv2/test2",
+				"namespace":           null,
+				"path":                "kvv2/test2",
+			},
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "test",
+		"provider_name":  "registry.terraform.io/hashicorp/vault",
+		"type":           "vault_generic_secret",
+	},
+}
+
+output_changes = {}
+
+raw = {
+	"configuration": {
+		"provider_config": {
+			"random": {
+				"full_name": "registry.terraform.io/hashicorp/random",
+				"name":      "random",
+			},
+		},
+		"root_module": {
+			"resources": [
+				{
+					"address": "random_pet.name",
+					"expressions": {
+						"length": {
+							"constant_value": 2,
+						},
+						"prefix": {
+							"references": [
+								"var.name",
+							],
+						},
+						"separator": {
+							"constant_value": "-",
+						},
+					},
+					"mode":                "managed",
+					"name":                "name",
+					"provider_config_key": "random",
+					"schema_version":      0,
+					"type":                "random_pet",
+				},
+			],
+			"variables": {
+				"name": {
+					"description": "The name prefix of the pet",
+				},
+			},
+		},
+	},
+	"format_version": "1.2",
+	"planned_values": {
+		"root_module": {
+			"resources": [
+				{
+					"address":          "random_pet.name",
+					"mode":             "managed",
+					"name":             "name",
+					"provider_name":    "registry.terraform.io/hashicorp/random",
+					"schema_version":   0,
+					"sensitive_values": {},
+					"type":             "random_pet",
+					"values": {
+						"id":        "dev-assured-crawdad",
+						"keepers":   null,
+						"length":    2,
+						"prefix":    "dev",
+						"separator": "-",
+					},
+				},
+			],
+		},
+	},
+	"prior_state": {
+		"format_version":    "1.0",
+		"terraform_version": "1.11.3",
+		"values": {
+			"root_module": {
+				"resources": [
+					{
+						"address":          "random_pet.name",
+						"mode":             "managed",
+						"name":             "name",
+						"provider_name":    "registry.terraform.io/hashicorp/random",
+						"schema_version":   0,
+						"sensitive_values": {},
+						"type":             "random_pet",
+						"values": {
+							"id":        "dev-assured-crawdad",
+							"keepers":   null,
+							"length":    2,
+							"prefix":    "dev",
+							"separator": "-",
+						},
+					},
+					{
+						"address": "vault_generic_secret.test",
+						"depends_on": [
+							"random_pet.name",
+						],
+						"mode":           "managed",
+						"name":           "test",
+						"provider_name":  "registry.terraform.io/hashicorp/vault",
+						"schema_version": 1,
+						"sensitive_values": {
+							"data":      true,
+							"data_json": true,
+						},
+						"type": "vault_generic_secret",
+						"values": {
+							"data":                "REDACTED_SENSITIVE",
+							"data_json":           "REDACTED_SENSITIVE",
+							"delete_all_versions": false,
+							"disable_read":        false,
+							"id":                  "kvv2/test2",
+							"namespace":           null,
+							"path":                "kvv2/test2",
+						},
+					},
+				],
+			},
+		},
+	},
+	"resource_changes": [
+		{
+			"address": "random_pet.name",
+			"change": {
+				"actions": [
+					"no-op",
+				],
+				"after": {
+					"id":        "dev-assured-crawdad",
+					"keepers":   null,
+					"length":    2,
+					"prefix":    "dev",
+					"separator": "-",
+				},
+				"after_sensitive": {},
+				"after_unknown":   {},
+				"before": {
+					"id":        "dev-assured-crawdad",
+					"keepers":   null,
+					"length":    2,
+					"prefix":    "dev",
+					"separator": "-",
+				},
+				"before_sensitive": {},
+			},
+			"mode":          "managed",
+			"name":          "name",
+			"provider_name": "registry.terraform.io/hashicorp/random",
+			"type":          "random_pet",
+		},
+		{
+			"address": "vault_generic_secret.test",
+			"change": {
+				"actions": [
+					"delete",
+				],
+				"after_sensitive": false,
+				"after_unknown":   {},
+				"before": {
+					"data":                "REDACTED_SENSITIVE",
+					"data_json":           "REDACTED_SENSITIVE",
+					"delete_all_versions": false,
+					"disable_read":        false,
+					"id":                  "kvv2/test2",
+					"namespace":           null,
+					"path":                "kvv2/test2",
+				},
+				"before_sensitive": {
+					"data":      true,
+					"data_json": true,
+				},
+			},
+			"mode":          "managed",
+			"name":          "test",
+			"provider_name": "registry.terraform.io/hashicorp/vault",
+			"type":          "vault_generic_secret",
+		},
+	],
+	"resource_drift": [
+		{
+			"address": "vault_generic_secret.test",
+			"change": {
+				"actions": [
+					"update",
+				],
+				"after": {
+					"data": {
+						"data":     "null",
+						"metadata": "{\"created_time\":\"2025-04-08T20:37:10.183396339Z\",\"custom_metadata\":null,\"deletion_time\":\"2025-04-09T00:07:10.183396339Z\",\"destroyed\":false,\"version\":1}",
+					},
+					"data_json":           "{\"data\":null,\"metadata\":{\"created_time\":\"2025-04-08T20:37:10.183396339Z\",\"custom_metadata\":null,\"deletion_time\":\"2025-04-09T00:07:10.183396339Z\",\"destroyed\":false,\"version\":1}}",
+					"delete_all_versions": false,
+					"disable_read":        false,
+					"id":                  "kvv2/test2",
+					"namespace":           null,
+					"path":                "kvv2/test2",
+				},
+				"after_sensitive": {
+					"data":      true,
+					"data_json": true,
+				},
+				"after_unknown": {},
+				"before": {
+					"data": {
+						"name": "dev-assured-crawdad",
+					},
+					"data_json":           "{\"name\":\"dev-assured-crawdad\"}",
+					"delete_all_versions": false,
+					"disable_read":        false,
+					"id":                  "kvv2/test2",
+					"namespace":           null,
+					"path":                "kvv2/test2",
+				},
+				"before_sensitive": {
+					"data":      true,
+					"data_json": true,
+				},
+			},
+			"mode":          "managed",
+			"name":          "test",
+			"provider_name": "registry.terraform.io/hashicorp/vault",
+			"type":          "vault_generic_secret",
+		},
+	],
+	"terraform_version": "1.11.3",
+	"timestamp":         "2025-04-15T18:56:18Z",
+	"variables": {
+		"name": {
+			"value": "dev",
+		},
+	},
+}
