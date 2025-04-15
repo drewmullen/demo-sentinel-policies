@@ -5,6 +5,8 @@ param protected_envs default [
     "prod",
 ]
 
+print("Protected environments: ", protected_envs)
+
 env_violations = filter tfrun.workspace.tags as tag {
     tag in protected_envs
 }
