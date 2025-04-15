@@ -1,12 +1,12 @@
 import "tfrun"
 import "tfplan/v2" as tfplan
 
-param envs_enforced default [
+param protected_envs default [
     "prod",
 ]
 
 env_violations = filter tfrun.workspace.tags as tag {
-    tag in envs_enforced
+    tag in protected_envs
 }
 
 unencrypted_ebs = filter tfplan.resource_changes as _, rc {
