@@ -10,6 +10,11 @@ policy "ebs-encryption-create-only" {
   enforcement_level = "hard-mandatory"
 }
 
+policy "ebs-encryption-by-env" {
+  source = "./encrypted-by-env.sentinel"
+  enforcement_level = "hard-mandatory"
+}
+
 module "report" {
   source = "https://registry.terraform.io/v2/policies/hashicorp/CIS-Policy-Set-for-AWS-Terraform/1.0.1/policy-module/report.sentinel?checksum=sha256:1f414f31c2d6f7e4c3f61b2bc7c25079ea9d5dd985d865c01ce9470152fa696d"
 }
