@@ -5,7 +5,7 @@ param envs_enforced default [
     "prod",
 ]
 
-env_enforced = filter tfrun.workspace.tags as tag {
+env_violations = filter tfrun.workspace.tags as tag {
     tag in envs_enforced
 }
 
@@ -16,7 +16,7 @@ unencrypted_ebs = filter tfplan.resource_changes as _, rc {
 }
 
 not_in_enforced_env = rule {
-    length(env_enforced) == 0
+    length(env_violations) == 0
 }
 
 all_ebs_encrypted = rule {
