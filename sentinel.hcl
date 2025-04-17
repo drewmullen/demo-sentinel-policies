@@ -10,8 +10,8 @@
 #   enforcement_level = "hard-mandatory"
 # }
 
-policy "ebs-encryption-by-env" {
-  source = "./encrypted-by-env.sentinel"
+policy "ebs-encryption-by-env-tag" {
+  source = "./encrypted-by-env-tag.sentinel"
   enforcement_level = "hard-mandatory"
 }
 
