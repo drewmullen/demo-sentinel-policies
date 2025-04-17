@@ -4,6 +4,7 @@ import "module" "is_var" {
 
 policy "sample-policy" {
   source = "./sample-policy.sentinel"
+  # can be overriden via policy set configuration
   enforcement_level = "hard-mandatory"
 }
 
