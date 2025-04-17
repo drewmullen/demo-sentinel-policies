@@ -1,0 +1,213 @@
+terraform_version = "1.11.2"
+
+planned_values = {
+	"outputs": {},
+	"resources": {
+		"aws_ebs_volume.example": {
+			"address":        "aws_ebs_volume.example",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "example",
+			"provider_name":  "registry.terraform.io/hashicorp/aws",
+			"tainted":        false,
+			"type":           "aws_ebs_volume",
+			"values": {
+				"availability_zone":    "us-east-1a",
+				"encrypted":            false,
+				"final_snapshot":       false,
+				"multi_attach_enabled": null,
+				"outpost_arn":          null,
+				"size":                 40,
+				"tags": {
+					"Name": "prod-env-fail",
+				},
+				"tags_all": {
+					"Name": "prod-env-fail",
+				},
+				"timeouts": null,
+			},
+		},
+	},
+}
+
+variables = {}
+
+resource_changes = {
+	"aws_ebs_volume.example": {
+		"address": "aws_ebs_volume.example",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"availability_zone":    "us-east-1a",
+				"encrypted":            false,
+				"final_snapshot":       false,
+				"multi_attach_enabled": null,
+				"outpost_arn":          null,
+				"size":                 40,
+				"tags": {
+					"Name": "prod-env-fail",
+				},
+				"tags_all": {
+					"Name": "prod-env-fail",
+				},
+				"timeouts": null,
+			},
+			"after_unknown": {
+				"arn":         true,
+				"create_time": true,
+				"id":          true,
+				"iops":        true,
+				"kms_key_id":  true,
+				"snapshot_id": true,
+				"tags":        {},
+				"tags_all":    {},
+				"throughput":  true,
+				"type":        true,
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "example",
+		"provider_name":  "registry.terraform.io/hashicorp/aws",
+		"type":           "aws_ebs_volume",
+	},
+}
+
+resource_drift = {}
+
+output_changes = {}
+
+raw = {
+	"configuration": {
+		"provider_config": {
+			"aws": {
+				"expressions": {
+					"region": {
+						"constant_value": "us-east-1",
+					},
+				},
+				"full_name": "registry.terraform.io/hashicorp/aws",
+				"name":      "aws",
+			},
+		},
+		"root_module": {
+			"resources": [
+				{
+					"address": "aws_ebs_volume.example",
+					"expressions": {
+						"availability_zone": {
+							"constant_value": "us-east-1a",
+						},
+						"encrypted": {
+							"constant_value": false,
+						},
+						"size": {
+							"constant_value": 40,
+						},
+						"tags": {
+							"constant_value": {
+								"Name": "prod-env-fail",
+							},
+						},
+					},
+					"mode":                "managed",
+					"name":                "example",
+					"provider_config_key": "aws",
+					"schema_version":      0,
+					"type":                "aws_ebs_volume",
+				},
+			],
+		},
+	},
+	"format_version": "1.2",
+	"planned_values": {
+		"root_module": {
+			"resources": [
+				{
+					"address":        "aws_ebs_volume.example",
+					"mode":           "managed",
+					"name":           "example",
+					"provider_name":  "registry.terraform.io/hashicorp/aws",
+					"schema_version": 0,
+					"sensitive_values": {
+						"tags":     {},
+						"tags_all": {},
+					},
+					"type": "aws_ebs_volume",
+					"values": {
+						"availability_zone":    "us-east-1a",
+						"encrypted":            false,
+						"final_snapshot":       false,
+						"multi_attach_enabled": null,
+						"outpost_arn":          null,
+						"size":                 40,
+						"tags": {
+							"Name": "prod-env-fail",
+						},
+						"tags_all": {
+							"Name": "prod-env-fail",
+						},
+						"timeouts": null,
+					},
+				},
+			],
+		},
+	},
+	"resource_changes": [
+		{
+			"address": "aws_ebs_volume.example",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"availability_zone":    "us-east-1a",
+					"encrypted":            false,
+					"final_snapshot":       false,
+					"multi_attach_enabled": null,
+					"outpost_arn":          null,
+					"size":                 40,
+					"tags": {
+						"Name": "prod-env-fail",
+					},
+					"tags_all": {
+						"Name": "prod-env-fail",
+					},
+					"timeouts": null,
+				},
+				"after_sensitive": {
+					"tags":     {},
+					"tags_all": {},
+				},
+				"after_unknown": {
+					"arn":         true,
+					"create_time": true,
+					"id":          true,
+					"iops":        true,
+					"kms_key_id":  true,
+					"snapshot_id": true,
+					"tags":        {},
+					"tags_all":    {},
+					"throughput":  true,
+					"type":        true,
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "example",
+			"provider_name": "registry.terraform.io/hashicorp/aws",
+			"type":          "aws_ebs_volume",
+		},
+	],
+	"terraform_version": "1.11.2",
+	"timestamp":         "2025-04-15T20:27:05Z",
+}

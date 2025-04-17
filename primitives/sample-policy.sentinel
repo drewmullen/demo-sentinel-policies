@@ -1,0 +1,25 @@
+# tfconfig/v2 - the terraform config
+# tfstate/v2  - the terraform state
+# tfrun       - the workspace run details
+# tfplan/v2   - post plan rendered details
+
+import "tfplan/v2" as tfplan
+
+violations = filter tfplan.resource_changes as _, rc {
+	rc.type is "aws_ebs_volume" and
+		rc.change.actions is ["create"] and
+		rc.change.after.encrypted is false 
+}
+
+if length(violations) != 0 {
+    print("Attempting to create unencrypted EBS volume. All EBS volumes must be `ecrypted=true`. See reference resource: ")
+    for _, violation in violations {
+        print(violation)
+    }
+} else {
+    print("No unencrypted EBS volumes being created in the plan.")
+}
+
+main = rule {
+	length(violations) == 0
+}

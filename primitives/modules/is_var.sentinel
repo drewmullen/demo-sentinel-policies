@@ -1,0 +1,8 @@
+import "strings"
+
+
+# Usage:
+#   is_var = is_variable_reference("var.enabled")
+is_variable_reference = func(reference) {
+	return strings.has_prefix(reference, "var.")
+}

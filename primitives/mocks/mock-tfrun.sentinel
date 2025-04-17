@@ -1,0 +1,63 @@
+id = "run-AAMmxaTfim7Hntus"
+created_at = "2025-04-15T20:26:37.649Z"
+created_by = "<username>"
+message = "Triggered via CLI"
+commit_sha = undefined
+speculative = false
+is_destroy = false
+refresh = true
+refresh_only = false
+replace_addrs = null
+target_addrs = null
+project = {
+	"id":   "prj-<>",
+	"name": "demo-sentinel",
+}
+
+variables = {
+	"AWS_ACCESS_KEY_ID": {
+		"category":  "env",
+		"sensitive": false,
+	},
+	"AWS_REGION": {
+		"category":  "env",
+		"sensitive": false,
+	},
+	"AWS_SECRET_ACCESS_KEY": {
+		"category":  "env",
+		"sensitive": true,
+	},
+	"AWS_SESSION_EXPIRATION": {
+		"category":  "env",
+		"sensitive": false,
+	},
+	"AWS_SESSION_TOKEN": {
+		"category":  "env",
+		"sensitive": true,
+	},
+}
+
+organization = {
+	"name": "mullen-hashi",
+}
+
+workspace = {
+	"auto_apply":     false,
+	"created_at":     "2025-04-15T20:23:40.197Z",
+	"description":    null,
+	"execution_mode": "default",
+	"id":             "ws-<id>",
+	"name":           "sentinel-create-fail-env",
+	"tag_bindings": [
+		{
+			"inherited": false,
+			"key":       "prod",
+			"value":     null,
+		},
+	],
+	"tags": [
+		"prod",
+	],
+	"vcs_repo":          null,
+	"working_directory": null,
+}

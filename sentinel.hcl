@@ -5,10 +5,10 @@
 #   # enforcement_level = "hard-mandatory"
 # }
 
-policy "ebs-encryption-create-only" {
-  source = "./ebs-encryption-create-only.sentinel"
-  enforcement_level = "hard-mandatory"
-}
+# policy "ebs-encryption-create-only" {
+#   source = "./ebs-encryption-create-only.sentinel"
+#   enforcement_level = "hard-mandatory"
+# }
 
 policy "ebs-encryption-by-env" {
   source = "./encrypted-by-env.sentinel"
